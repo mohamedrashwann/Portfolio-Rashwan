@@ -1,6 +1,34 @@
 // Portfolio Website JavaScript
+
+// Function to set the theme
+function setTheme(theme) {
+    const body = document.body;
+    if (theme === 'light') {
+        body.classList.add('light-mode');
+        localStorage.setItem('theme', 'light');
+        document.getElementById('theme-toggle').innerHTML = '<i class="fas fa-moon"></i>';
+    } else {
+        body.classList.remove('light-mode');
+        localStorage.setItem('theme', 'dark');
+        document.getElementById('theme-toggle').innerHTML = '<i class="fas fa-sun"></i>';
+    }
+}
+
+// Check for saved theme preference
+const savedTheme = localStorage.getItem('theme') || 'dark';
+setTheme(savedTheme);
+
 document.addEventListener('DOMContentLoaded', function() {
     
+    // Theme Toggle Button
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = document.body.classList.contains('light-mode') ? 'dark' : 'light';
+            setTheme(currentTheme);
+        });
+    }
+
     // Navigation functionality
     const navButtons = document.querySelectorAll('.nav-btn');
     const contentSections = document.querySelectorAll('.content-section');
