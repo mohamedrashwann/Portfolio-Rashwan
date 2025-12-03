@@ -196,6 +196,7 @@ body {
     height: calc(100vh - 160px); /* 100vh - (80px top margin + 80px bottom margin from .conte) */
     display: flex;
     flex-direction: column;
+    overflow-y: auto; /* جعل الحاوية الرئيسية قابلة للتمرير */
 }
 
 /* Navigation Styles */
@@ -241,10 +242,9 @@ body {
 
 .content-section.active {
     display: block;
-    /* إضافة تنسيقات لجعل المحتوى قابلاً للتمرير */
-    overflow-y: auto;
+    /* إزالة التمرير من هنا */
     flex-grow: 1;
-    padding-right: 1rem; /* لإضافة مسافة للمحتوى عند التمرير */
+    padding-right: 1rem; 
 }
 
 .section-title {
@@ -252,6 +252,12 @@ body {
     font-weight: 700;
     margin-bottom: 0.5rem;
     color: var(--text-primary);
+    /* تثبيت عنوان القسم */
+    position: sticky;
+    top: 4.5rem; /* أسفل شريط التنقل (تقريبيًا 1.5rem margin + 1.5rem padding + 1.5rem nav height) */
+    background-color: var(--bg-dark);
+    z-index: 400;
+    padding-top: 0.5rem; /* لتعويض الهامش */
 }
 
 .section-divider {
@@ -259,6 +265,11 @@ body {
     height: 3px;
     background-color: var(--accent-yellow);
     margin-bottom: 2rem;
+    /* تثبيت الفاصل */
+    position: sticky;
+    top: 8.5rem; /* أسفل العنوان (تقريبيًا) */
+    background-color: var(--bg-dark);
+    z-index: 400;
 }
 
 .about-text {
