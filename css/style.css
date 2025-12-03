@@ -192,14 +192,24 @@ body {
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 1.5rem;
+    /* إضافة تنسيقات لجعل المحتوى قابلاً للتمرير */
+    height: calc(100vh - 160px); /* 100vh - (80px top margin + 80px bottom margin from .conte) */
+    display: flex;
+    flex-direction: column;
 }
 
 /* Navigation Styles */
 .main-nav {
     display: flex;
     gap: 0.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem; /* تقليل الهامش السفلي */
     justify-content: flex-end;
+    /* تثبيت شريط التنقل */
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-dark); /* لضمان ظهور شريط التنقل فوق المحتوى عند التمرير */
+    padding-bottom: 0.5rem; /* لإضافة مسافة أسفل شريط التنقل */
+    z-index: 500; /* لضمان ظهوره فوق المحتوى */
 }
 
 .nav-btn {
@@ -231,6 +241,10 @@ body {
 
 .content-section.active {
     display: block;
+    /* إضافة تنسيقات لجعل المحتوى قابلاً للتمرير */
+    overflow-y: auto;
+    flex-grow: 1;
+    padding-right: 1rem; /* لإضافة مسافة للمحتوى عند التمرير */
 }
 
 .section-title {
