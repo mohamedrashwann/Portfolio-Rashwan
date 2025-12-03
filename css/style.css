@@ -520,16 +520,20 @@ body {
 /* Theme Toggle Button */
 #theme-toggle {
     position: fixed;
-    top: 1rem;
-    right: 1rem;
+    top: 1.5rem; /* تعديل الموضع */
+    right: 1.5rem; /* تعديل الموضع */
     z-index: 1000;
     background: var(--bg-card);
     border: 1px solid var(--border-color);
-    padding: 0.5rem 0.75rem;
-    border-radius: 8px;
+    width: 40px; /* تصغير الحجم */
+    height: 40px; /* تصغير الحجم */
+    border-radius: 50%; /* جعله دائريًا */
     color: var(--text-primary);
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1rem; /* تصغير حجم الأيقونة */
+    display: flex; /* لتوسيط الأيقونة */
+    align-items: center; /* لتوسيط الأيقونة */
+    justify-content: center; /* لتوسيط الأيقونة */
     box-shadow: 0 2px 10px rgba(0,0,0,0.3);
     transition: all 0.3s ease;
 }
